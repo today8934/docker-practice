@@ -21,3 +21,10 @@ services:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
       WORDPRESS_DB_PASSWORD: wordpress
+  nginx:
+    image: nginx:latest
+    volumes:
+      - ./nginx/index.html:/usr/share/nginx/html/index.html
+    ports:
+      - "5000:80"
+    restart: always
